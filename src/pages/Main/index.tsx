@@ -1,7 +1,8 @@
 import React, { FC, useCallback, useState } from 'react';
-import convertBase from '../utils/functions/converterBase';
+import convertBase from '../../utils/functions/converterBase';
 
-import Card from '../components/Card';
+import Card from '../../components/Card';
+import { Container, Input } from './styles';
 
 interface Props {
 }
@@ -16,15 +17,13 @@ const Main: FC<Props> = (props) => {
   }, [input]);
 
   return (
-    <div className="app-main">
+    <Container>
       <h1>Conversor de Binário</h1>
       <Card>
-        <input type="text" value={input} onChange={(e) => {
-          setInput(e.target.value)
-        }} />
+        <Input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
         <button onClick={converter}>Converter</button>
       </Card>
-    </div >
+    </Container >
   )
 }
 export default Main;
